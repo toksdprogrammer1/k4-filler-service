@@ -22,6 +22,13 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [notification, setNotification] = useState({ open: false, message: '', severity: 'info' });
 
+  const getApiUrl = () => {
+    if (process.env.NODE_ENV === 'development') {
+      return 'http://localhost:8000';
+    }
+    return '';
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!file) return;
@@ -39,7 +46,8 @@ function App() {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 300000); // 5-minute timeout
 
-      const response = await fetch('http://localhost:8000/api/process-statement', {
+      const baseUrl = getApiUrl();
+      const response = await fetch(`${baseUrl}/api/process-statement`, {
         method: 'POST',
         body: formDataToSend,
         signal: controller.signal
