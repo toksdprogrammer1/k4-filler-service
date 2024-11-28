@@ -229,7 +229,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Authors
 
-[Your Name/Organization]
+Tokunbo Ojo (tooj20@student.bth.se)
 
 ## Acknowledgments
 
