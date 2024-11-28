@@ -1,0 +1,10 @@
+fastapi
+python-multipart
+uvicorn
+langchain
+langchain-anthropic
+langchain-community
+anthropic
+pypdf==3.17.1
+pypdf2==3.0.1
+python-dotenv 
