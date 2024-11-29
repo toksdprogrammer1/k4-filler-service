@@ -1,6 +1,6 @@
 # K4 Filler Service
 
-A cloud-native application that automates the process of filling Swedish K4 tax forms using activity statements. The application uses Anthropic's Claude AI to process PDF statements and automatically fills the appropriate fields in the K4 form.
+A cloud-native application that automates the process of filling Swedish K4 tax forms using activity statements. The application uses Anthropic's Claude AI to process PDF statements and automatically fills the appropriate fields in the K4 form, with database persistence for tracking requests.
 
 ## Features
 
@@ -11,6 +11,8 @@ A cloud-native application that automates the process of filling Swedish K4 tax 
 - Real-time processing status updates
 - Secure handling of sensitive information
 - Downloadable filled K4 forms
+- Request history tracking with PostgreSQL
+- Decimal handling for financial calculations
 
 ## Tech Stack
 
@@ -24,12 +26,14 @@ A cloud-native application that automates the process of filling Swedish K4 tax 
 - FastAPI (Python)
 - Anthropic Claude AI
 - PyPDF2 for PDF processing
+- SQLAlchemy with PostgreSQL
 - Docker
 - Uvicorn server
 
 ### Infrastructure
 - Google Kubernetes Engine (GKE)
 - Google Container Registry (GCR)
+- PostgreSQL Database
 - Kubernetes for orchestration
 - Docker Compose (development)
 
